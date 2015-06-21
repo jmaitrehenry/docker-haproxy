@@ -3,7 +3,7 @@ FROM haproxy:1.5
 MAINTAINER Julien Maitrehenry "julien.maitrehenry@me.com"
 
 RUN apt-get update \
-	&& apt-get install -y wget ca-certificates python python-pip \
+	&& apt-get install -y --no-install-recommends wget ca-certificates python python-pip \
 	&& wget -qO - https://github.com/hashicorp/consul-template/releases/download/v0.10.0/consul-template_0.10.0_linux_amd64.tar.gz | tar xzf - \
 	&& mv consul-template_0.10.0_linux_amd64/consul-template /bin/consul-template \
 	&& pip install requests \

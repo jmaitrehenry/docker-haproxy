@@ -1,5 +1,5 @@
 #!/bin/sh
-f [ -n "$STATSD_HOST" ]; then
+if [ -n "$STATSD_HOST" ]; then
     HAPROXY_HOST="http://127.0.0.1:1936/;csv" HAPROXY_USER=stats HAPROXY_PASS=stats /bin/haproxy-statsd.py &
 fi
 

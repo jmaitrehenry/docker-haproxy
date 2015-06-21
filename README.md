@@ -28,6 +28,9 @@ docker run \
     jmaitrehenry/haproxy
 ```
 
+- CONSUL_SERVER and CONSUL_SERVICE_NAME are mandatory parameter
+- To enable statsd report plugin, set STATSD_HOST
+
 ## Contributing
 
 1. Fork it!
@@ -38,7 +41,6 @@ docker run \
 
 ## TODO
 
-- Adding statsd module
 - Add support for more than one service (like HTTP and HTTPs for one service in the same instance)
 
 ## Credits

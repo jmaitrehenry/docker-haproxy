@@ -3,6 +3,7 @@
 This repository contains Dockerfile of Haproxy with consul-template and statsd stats module
 
 [![](https://badge.imagelayers.io/jmaitrehenry/haproxy:latest.svg)](https://imagelayers.io/?images=jmaitrehenry/haproxy:latest 'Get your own badge on imagelayers.io')
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 ## Base Docker Image
 
@@ -19,10 +20,10 @@ This repository contains Dockerfile of Haproxy with consul-template and statsd s
 
 ```
 docker run \
-    -d -p 80:80 \
-    -e CONSUL_SERVER=X.X.X.X:8500 \
-    -e CONSUL_SERVICE_NAME=service-name-80 \
-    -e STATSD_HOST=X.X.X.X \
+    -d -p 80:80 -p 1936:1936 \
+    -e CONSUL_SERVER=<consul IP>:8500 \
+    -e CONSUL_SERVICE_NAME=http \
+    -e STATSD_HOST=<statsd IP> \
     -e STATSD_PORT=8125 \
     -e STATSD_NAMESPACE=haproxy \
     jmaitrehenry/haproxy
@@ -38,10 +39,6 @@ docker run \
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
-
-## TODO
-
-- Add support for more than one service (like HTTP and HTTPs for one service in the same instance)
 
 ## Credits
 

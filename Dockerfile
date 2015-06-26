@@ -20,4 +20,4 @@ COPY start.sh start.sh
 EXPOSE 80
 EXPOSE 1936 
 
-CMD ./start.sh
+CMD ["/bin/bash", "-c", "set -e && ./start.sh"]

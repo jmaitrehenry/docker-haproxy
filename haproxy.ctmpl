@@ -1,5 +1,5 @@
 global
-    maxconn 256
+    maxconn 2000 
     pidfile /var/run/haproxy-private.pid
 
 defaults
